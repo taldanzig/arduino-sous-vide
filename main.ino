@@ -12,7 +12,7 @@ int output_pin = 3;
 boolean heater_state;
 float min_temp_change = 0.5;
 
-// LiquidCrystal(rs, enable, d4, d5, d6, d7) 
+// LiquidCrystal(rs, enable, d4, d5, d6, d7)
 LiquidCrystal lcd(rs, e, 4, 5, 6, 7);
 
 void setup()
@@ -86,9 +86,9 @@ void loop()
   lcd.print(temp, 1);
   lcd.print("  ");
   lcd.print(blinky ? '.' : ' ');
-  
+
   float temp_diff = temp - target_temp;
-  
+
   if (temp_diff > min_temp_change) {
     // Too hot
     heater_state = false;
@@ -96,7 +96,7 @@ void loop()
     // Too cold
     heater_state = true;
   }
-  
+
   lcd.setCursor(10, 0);
 
   static boolean relay_state;
