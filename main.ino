@@ -53,7 +53,7 @@ void loop()
   } else
     t_button--;
 
-  const float conversion_factor = 382.0/1024;
+  const float conversion_factor = (273.15 + 23.5) / 787.0; // K/bit
   const unsigned T_ANALOG = 10 / T_JIFFY; // ms/ms
   const unsigned N_READINGS = 500;
   const unsigned N_TRIM = 100;
